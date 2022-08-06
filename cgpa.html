@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>CGPA Calculator</title>
+	<style type="text/css">
+		body{
+			background: #3C3B3F;  /* fallback for old browsers */
+			background: -webkit-linear-gradient(to left, #605C3C, #3C3B3F);  /* Chrome 10-25, Safari 5.1-6 */
+			background: linear-gradient(to left, #605C3C, #3C3B3F); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+		}
+		h1{
+			padding: 10px;
+			text-align: center;
+			background: #CCCCB2;  /* fallback for old browsers */
+			background: -webkit-linear-gradient(to right, #757519, #CCCCB2);  /* Chrome 10-25, Safari 5.1-6 */
+			background: linear-gradient(to right, #757519, #CCCCB2); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+			border-radius: 5px;
+			margin-right: 50px;
+			margin-left: 50px;
+		}
+		form{
+			text-align: center;
+		}
+	</style>
+</head>
+<body><br><br>
+<h1>CGPA calculator</h1>
+<h5 align="center">Enter 0 if sem is not completed</h5>
+<form>
+	<label>Semester1 -</label>
+	<input type="num" name="Semester" id="Sem1" placeholder="0" ><br><br>
+	<label>Semester2 -</label>
+	<input type="num" name="Semester" id="Sem2" placeholder="0"><br><br>
+	<label>Semester3 -</label>
+	<input type="num" name="Semester" id="Sem3" placeholder="0"><br><br>
+	<label>Semester4 -</label>
+	<input type="num" name="Semester" id="Sem4" placeholder="0"><br><br>
+	<label>Semester5 -</label>
+	<input type="num" name="Semester" id="Sem5" placeholder="0"><br><br>
+	<label>Semester6 -</label>
+	<input type="num" name="Semester" id="Sem6" placeholder="0"><br><br>
+	<label>Semester7 -</label>
+	<input type="num" name="Semester" id="Sem7" placeholder="0"><br><br>
+	<label>Semester8 -</label>
+	<input type="num" name="Semester" id="Sem8" placeholder="0"><br><br>
+
+<input type="button" name="Calculate CGPA" id="CGPA"  value="Calculate"  onclick="calcy()">
+</form>
+<div class="form">
+<h3 align="center">The Cgpa is :</h3><h3 align="center" id="showCgpa"></h3>	
+<h3 align="center">The Percentage is :</h3><h3 align="center" id="showPercentage"></h3> > 
+</div>        
+<h1>Created by Shivaprasad k</h1>
+
+
+</body>
+<script>
+	const calcy = () =>{
+    let Sem1 = document.getElementById('Sem1').value;
+    let Sem2 = document.getElementById('Sem2').value;
+    let Sem3 = document.getElementById('Sem3').value;
+	let Sem4 = document.getElementById('Sem4').value;
+	let Sem5 = document.getElementById('Sem5').value;
+	let Sem6 = document.getElementById('Sem6').value;
+	let Sem7 = document.getElementById('Sem7').value;
+	let Sem8 = document.getElementById('Sem8').value;
+
+	let CGPA = (parseFloat(Sem1) + parseFloat(Sem2) + parseFloat(Sem3) + parseFloat(Sem4) + parseFloat(Sem5) + parseFloat(Sem6) + parseFloat(Sem7) + parseFloat(Sem8))/8
+
+	let Percentage= parseFloat(CGPA-0.75)*10;
+	document.getElementById('showCgpa').innerHTML = ` ${CGPA} `
+	document.getElementById('showPercentage').innerHTML = ` ${Percentage} `
+	}
+
+    
+	
+</script>
+
+</html>
